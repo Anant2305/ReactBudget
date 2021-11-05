@@ -29,8 +29,8 @@ function App() {
       newEntries[index].isExpense = isExpense;
       setEntries(newEntries);
       resetEntry();
-      
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   },[isOpen])
 
   useEffect(() => {

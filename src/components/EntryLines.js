@@ -1,6 +1,5 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment} from 'react';
 import { Grid, Icon, Segment, Statistic } from 'semantic-ui-react';
-import ModalEdit from './ModalEdit';
 
 function EntryLines({id, description, value, isExpense=false, deleteEntry, editEntry}) {
   
