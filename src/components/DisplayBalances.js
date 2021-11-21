@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Segment, Statistic } from 'semantic-ui-react';
+import { Grid, Segment } from 'semantic-ui-react';
 import DisplayBalance from './DisplayBalance';
 
 function DisplayBalances({expenseTotal, incomeTotal}) {
