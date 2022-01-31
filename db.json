@@ -1,38 +1,60 @@
 {
-    "entries": [{
-            "id":1,
-            "description": "Work income"
-        },
-        { 
-            "id":2,
-            "description": "Water Bill"
-        },
-        { 
-            "id":3,
-            "description": "Mortgage"
-        },
-        { 
-            "id":4,
-            "description": "Electical"
-    }],
-    "values": [{
-        "id":1,
-        "value": 1000.00,
-        "isExpense": false
+  "entries": [
+    {
+      "id": 1,
+      "description": "Work income"
     },
-    { 
-        "id":2,
-        "value": 200.00,
-        "isExpense": true
+    {
+      "id": 4,
+      "description": "Electical"
     },
-    { 
-        "id":3,
-        "value": 500.00,
-        "isExpense": true
+    {
+      "description": "Anant",
+      "id": 5
     },
-    { 
-        "id":4,
-        "value": 100.00,
-        "isExpense": true
-}]
+    {
+      "description": "Dipti",
+      "id": 6
+    },
+    {
+      "description": "Ami",
+      "id": 7
+    },
+    {
+      "description": "Shiv",
+      "id": 8
+    }
+  ],
+  "values": [
+    {
+      "id": 1,
+      "value": 1000,
+      "isExpense": false
+    },
+    {
+      "id": 4,
+      "value": 100,
+      "isExpense": true
+    },
+    {
+      "isExpense": true,
+      "value": "450",
+      "id": 5
+    },
+    {
+      "isExpense": false,
+      "value": "600",
+      "id": 6
+    },
+    {
+      "isExpense": true,
+      "value": "300",
+      "id": 7
+    },
+    {
+      "isExpense": true,
+      "value": "200",
+      "id": 8
+    }
+  ]
 }

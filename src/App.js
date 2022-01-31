@@ -9,6 +9,7 @@ import NewEntryForm from './components/NewEntryForm';
 import ModalEdit from './components/ModalEdit';
 import {useDispatch, useSelector} from 'react-redux';
 import { getAllEntries } from './actions/entries.actions';
+
 function App() {
   const [incomeTotal, setIncomeTotal] = useState(0);
   const [expenseTotal, setExpenseTotal] = useState(0);
@@ -18,55 +19,38 @@ function App() {
   const entries = useSelector((state) => state.entries);
   
   useEffect(() =>{
-    const index = entries.findIndex(entry => entry.id===id)
+    const index = entries.findIndex(entry => entry.id===id);
     setEntry(entries[index]);
-  },[isOpen, id, entries])
+  },[isOpen, id, entries]);
 
   useEffect(() => {
     let totalIncomes = 0;
     let totalExpenses = 0;
     entries.map((entry) => {
       if(entry.isExpense) {
-        return totalExpenses += entry.value;
+        return totalExpenses += Number(entry.value);
       } 
-      return totalIncomes += entry.value
+      return totalIncomes += Number(entry.value);
     });
     setTotal(totalIncomes - totalExpenses);
     setExpenseTotal(totalExpenses);
     setIncomeTotal(totalIncomes);
     // eslint-disable-next-line
-  }, entries)
+  }, [entries]);
 
   const dispatch = useDispatch();
-
   useEffect(() => {
     dispatch(getAllEntries());
-  }
-  )
-  // //const deleteEntry = id => {}
-  // MOVED TO REDUX PROCESS
-  // function deleteEntry(id){
-  //   const result = entries.filter(entry => entry.id !== id);
-  //   //setEntries(result);
-  // }
-
+  }, [dispatch]);
   return (
     <Container>
-      
       <MainHeader title="Budget"/>
-
       <DisplayBalance balSize='small' balColor='black' balLabel='YOUR BALANCE' balValue={total} />
-      
       <DisplayBalances expenseTotal={expenseTotal} incomeTotal={incomeTotal}/>
-
       <MainHeader title="History" type='h3' />
-
       <EntryLine entries={entries} />
-      
-
       <MainHeader title="Add New Transaction" type='h3' />
       <NewEntryForm/>
-
       <ModalEdit isOpen={isOpen} {...entry}/>
     </Container>
   );
